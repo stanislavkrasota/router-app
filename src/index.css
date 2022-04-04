@@ -11,3 +11,53 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+a {
+  text-decoration: none !important;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+pre,
+hr,
+dl,
+dd,
+ol,
+ul,
+figure {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+}
+
+ul, li {
+  list-style: none;
+}
+
+.open {
+  display: block;
+}
+
+.close {
+  display: none;
+}
+
+.mt-2 {
+  margin-top: 20px;
+}
+
+.mr-2 {
+  margin-right: 20px;
+}
+
+.margin-centered {
+  margin: 0 auto !important;
+}
+
+.flex {
+  display: flex;
+}

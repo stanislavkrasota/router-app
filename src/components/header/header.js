@@ -1,19 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
+import Navbar from "./navbar/navbar";
+import Routing from "../../constants/routing"
 
 export default function Header() {
+    const links = Object.entries(Routing()).map((e) => ( {label: e[0], to: e[1] } ));
+
     return (
-        <ul>
-            <li>
-                <Link to="/">Home</Link>
-            </li>
-            <li>
-                <Link to="/about">About</Link>
-            </li>
-            <li>
-                <Link to="/dashboard">Dashboard</Link>
-            </li>
-        </ul>
+        <Navbar links={links}
+            textColor={'primary'}
+            indicatorColor={'primary'}
+        />
     )
 }
