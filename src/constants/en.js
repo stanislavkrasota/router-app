@@ -23,3 +23,17 @@ export const en = {
         }
     ],
 }
+export const URL = 'https://jsonplaceholder.typicode.com/';
+// eslint-disable-next-line
+export const EMAIL_PATTERN = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/;
+
+export const HEADERS = {
+    'Content-type': 'application/json; charset=UTF-8'
+}
+
+export const ALERTS_TYPES = {
+    Error: 'error',
+    Warning: 'warning',
+    Info: 'info',
+    Success: 'success'
+}

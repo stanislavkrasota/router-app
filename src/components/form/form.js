@@ -1,45 +1,41 @@
 import React, {Fragment} from "react";
-import { Box, Button, Checkbox, FormControlLabel, FormGroup, Grid, TextField } from "@mui/material";
+import { Box, Button, Checkbox, FormControlLabel, Grid, TextField } from "@mui/material";
 import styles from "./from.module.scss"
 
 const CustomForm = ({
     isOpen,
     handleChange,
     btnTitle,
-    handleButtonClick,
     data,
     handleSubmit,
-    values,
-    id,
-    formClassName,
-    inputClassName,
     errors
 }) => {
     return (
-        <Box
-            sx={{display: isOpen ? 'flex' : 'none'}}
+        <Box sx={{display: isOpen ? 'flex' : 'none'}}
             className={styles.formBox}>
             <h2>Sign-in Form</h2>
 
-            <FormGroup onSubmit={handleSubmit} className={'mt-2'}>
+            <form onSubmit={handleSubmit} className={'mt-2'}>
                 <Grid container spacing={2}>
                     {data.map(({ name, type, placeholder, required, label }, index) => (
                         <Fragment key={index}>
                             <Grid item xs={12} >
                                 {type === 'text'
-                                    ? <TextField id={index + 'control'}
+                                    ? <TextField id={index + '-control'}
                                         name={name}
+                                        tabIndex={index + 1}
                                         label={label}
                                         placeholder={placeholder}
-                                        required={required} fullWidth={true}
+                                        required={required}
+                                        fullWidth={true}
                                         onChange={handleChange}
-
                                         error={errors && errors[name]}/>
                                     : (type === 'checkbox'
                                         ?  <FormControlLabel
                                             name={name}
+                                            tabIndex={index + 1}
                                             required={required}
-                                            control={<Checkbox />}
+                                            control={<Checkbox onChange={handleChange} />}
                                             label={label}
                                         />
                                         : '')
@@ -49,16 +45,24 @@ const CustomForm = ({
                     ))}
                     <Button
                         variant="contained"
+                        type={'submit'}
                         color={'primary'}
                         size={'large'}
-                        className={'margin-centered'}
-                        onClick={handleButtonClick}>
+                        className={'margin-centered'}>
                         {btnTitle}
                     </Button>
                 </Grid>
-            </FormGroup>
+            </form>
         </Box>
     )
 }
+
+// CustomForm.propTypes = {
+//     handleChange: PropTypes.func.isRequired,
+//     handleSubmit: PropTypes.func.isRequired,
+//     isOpen: PropTypes.bool,
+//     data: PropTypes.object,
+//     errors: PropTypes.object
+// };
 
 export default CustomForm;
