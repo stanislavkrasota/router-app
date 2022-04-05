@@ -37,3 +37,15 @@ export const ALERTS_TYPES = {
     Info: 'info',
     Success: 'success'
 }
+
+export const EMPLOYEES_TABLE_COLUMNS = [
+    {name: 'ID'},
+    {name: 'Name'},
+    {name: 'Username'},
+    {name: 'Email'},
+    {name: 'Phone Number'},
+    {name: 'Website'},
+    {name: 'Address'}
+]
+
+
