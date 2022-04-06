@@ -40,6 +40,7 @@ class Home extends Component {
             HomeService.doSignIn({email, password, allowAdvertisement}).then((res) => {
                 if (res.id) {
                     this.fadeAlert(ALERTS_TYPES.Success, 'Successfully Login');
+                    this.props.handleAuth(true);
                 }
             });
         } else {
