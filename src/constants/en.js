@@ -48,4 +48,6 @@ export const EMPLOYEES_TABLE_COLUMNS = [
     {name: 'Address'}
 ]
 
+export const AUTH_USER = 'auth-user';
+
 

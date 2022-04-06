@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { Box, Button } from "@mui/material";
 import CustomForm from "../components/form/form";
-import { ALERTS_TYPES, EMAIL_PATTERN, en } from "../constants/en";
+import { ALERTS_TYPES, AUTH_USER, EMAIL_PATTERN, en } from "../constants/en";
 import classNames from "classnames";
 import HomeService from "../services/home.service";
 import Alert from "@mui/material/Alert";
 import Snackbar from "@mui/material/Snackbar";
+import StorageService from "../services/storage.service";
 
 class Home extends Component {
     constructor(props) {
@@ -41,10 +42,12 @@ class Home extends Component {
                 if (res.id) {
                     this.fadeAlert(ALERTS_TYPES.Success, 'Successfully Login');
                     this.props.handleAuth(true);
+                    StorageService.setLSItem(AUTH_USER, res, true);
                 }
             });
         } else {
             this.fadeAlert(ALERTS_TYPES.Error, 'Invalid email address or password');
+            this.props.handleAuth(false);
         }
     }
 
@@ -74,7 +77,7 @@ class Home extends Component {
     render() {
         return (
             <>
-                <Box className={classNames('flex', 'mt-2', 'mb-2')}>
+                <Box className={classNames('d-flex', 'mt-2', 'mb-2')}>
                     <h1 className={'mr-2'}>Home</h1>
                     <Button variant="contained"
                             color={!this.state.isOpen ? 'primary' : 'error'}

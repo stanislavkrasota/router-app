@@ -38,11 +38,15 @@ ul, li {
   list-style: none;
 }
 
-.open {
+.d-flex {
+  display: flex;
+}
+
+.d-block {
   display: block;
 }
 
-.hide {
+.d-none {
   display: none;
 }
 
@@ -62,6 +66,10 @@ ul, li {
   margin: 0 auto !important;
 }
 
-.flex {
-  display: flex;
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
 }
