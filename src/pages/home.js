@@ -37,7 +37,8 @@ class Home extends Component {
     handleSubmit(e) {
         e.preventDefault();
         const {email, password, allowAdvertisement} = this.state.form;
-        if (EMAIL_PATTERN.test(email) && password.length > 3 ) {
+        if (EMAIL_PATTERN.test(email) && password.length > 3) {
+            // TODO: Mock request
             HomeService.doSignIn({email, password, allowAdvertisement}).then((res) => {
                 if (res.id) {
                     this.fadeAlert(ALERTS_TYPES.Success, 'Successfully Login');

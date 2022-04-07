@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import Header from "./components/header/header";
 import GuardedRoute from "./components/guard/guard-route";

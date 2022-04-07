@@ -26,6 +26,7 @@ export const en = {
 export const URL = 'https://jsonplaceholder.typicode.com/';
 // eslint-disable-next-line
 export const EMAIL_PATTERN = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/;
+export const IP_PATTERN = /\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b/;
 
 export const HEADERS = {
     'Content-type': 'application/json; charset=UTF-8'
@@ -50,4 +51,5 @@ export const EMPLOYEES_TABLE_COLUMNS = [
 
 export const AUTH_USER = 'auth-user';
 
+export const IP_URL = 'https://www.cloudflare.com/cdn-cgi/trace';
 
